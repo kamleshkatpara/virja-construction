@@ -1,0 +1,156 @@
+.aboutus {
+  position: relative;
+  width: 100%;
+}
+
+.aboutus__header__container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Same as image height */
+  overflow: hidden; /* Hide overflow to ensure the sliding effect is clean */
+}
+
+img.aboutus__header {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aboutus__header__banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 255, 0.3),
+    rgba(0, 0, 0, 0.5)
+  ); /* Gradient effect */
+  color: #ffffff;
+  transform: translateX(-100%);
+  opacity: 0;
+  display: flex;
+  align-items: flex-end; /* Align items to the bottom */
+  justify-content: flex-start; /* Align items to the left */
+  text-align: left;
+  padding: 20px;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.aboutus__header__banner h3 {
+  font-family: "Montserrat", Sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.aboutus__header__container:hover .aboutus__header__banner {
+  transform: translateX(0); /* Move to final position */
+  opacity: 1;
+}
+
+.title-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%; /* Ensure full width */
+}
+
+/* Define the animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to .title-header */
+.title-header h3 {
+  color: #a98433;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 2rem;
+  animation: slideIn 0.6s ease-out; /* Animation name and duration */
+  animation-delay: 0.4s; /* Delay before the animation starts */
+  text-transform: uppercase;
+}
+
+.title-header p {
+  max-width: 900px;
+  text-align: justify;
+}
+
+.leadership {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
+}
+
+.leadership__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.leadership__header {
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.leadership__header__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.leadership__body {
+  background-color: #007bff;
+  width: 100%;
+  padding: 2rem;
+}
+
+.leadership__body__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+}
+
+.leadership__body__image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.leadership__body__name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.leadership__body__position {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.leadership__body__text {
+  font-size: 1rem;
+}
