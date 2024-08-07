@@ -18,6 +18,13 @@
     <link rel="stylesheet" href="styles/css-reset.css" />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/aboutus.css" />
+    <script>
+      if (window.location.hostname === "kamleshkatpara.github.io") {
+        let base = document.createElement("base");
+        base.href = "https://kamleshkatpara.github.io/virja-construction/";
+        document.head.appendChild(base);
+      }
+    </script>
   </head>
   <body>
     <div class="site-container">
@@ -35,20 +42,18 @@
             ><span class="header__nav-icon"></span
           ></label>
           <ul class="header__nav-menu">
-            <li><a href="./index.html" class="header__nav-link">Home</a></li>
+            <li><a href="index.html" class="header__nav-link">Home</a></li>
             <li>
-              <a href="./about-us.html" class="header__nav-link">About Us</a>
+              <a href="about-us.html" class="header__nav-link">About Us</a>
             </li>
             <li>
-              <a href="./projects.html" class="header__nav-link">Projects</a>
+              <a href="projects.html" class="header__nav-link">Projects</a>
             </li>
             <li>
-              <a href="./partners.html" class="header__nav-link">Partners</a>
+              <a href="partners.html" class="header__nav-link">Partners</a>
             </li>
             <li>
-              <a href="./contact-us.html" class="header__nav-link"
-                >Contact us</a
-              >
+              <a href="contact-us.html" class="header__nav-link">Contact us</a>
             </li>
           </ul>
         </nav>
@@ -149,7 +154,7 @@
           <div class="footer__columns">
             <div class="footer__column">
               <div class="footer__branding">
-                <img src="./assets/logo.jpg" alt="website logo" width="150" />
+                <img src="assets/logo.jpg" alt="website logo" width="150" />
               </div>
               <div class="footer__branding__content">
                 Incorporated in 2002 with an intention to provide quality
@@ -176,11 +181,11 @@
             <div class="footer__column">
               <h3>Quick Links</h3>
               <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About us</a></li>
-                <li><a href="">Projects</a></li>
-                <li><a href="">Our Partners</a></li>
-                <li><a href="">Contact us</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About us</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="contact-us.html">Contact us</a></li>
               </ul>
             </div>
           </div>
