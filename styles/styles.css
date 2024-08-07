@@ -362,9 +362,9 @@ address {
     height: 100vh;
     background-color: var(--primary-color);
     padding: 1rem;
-    top: 4.5rem;
+    top: 10rem;
     right: -100%;
-    position: fixed;
+    position: absolute;
     z-index: 999;
     border-top: 1px dashed white;
     transition: transform 0.5s ease-in;
