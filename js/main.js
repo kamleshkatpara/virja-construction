@@ -5,10 +5,8 @@ if (window.location.hostname === "kamleshkatpara.github.io") {
   document.head.appendChild(base);
 }
 
-// Get the current year
 let currentYear = new Date().getFullYear();
 
-// Set the current year in the span with id 'current-year'
 document.getElementById("current-year").textContent = currentYear;
 
 const basePath =
@@ -19,28 +17,93 @@ const currentPath = window.location.pathname.replace(basePath, "");
 
 console.log(currentPath);
 
-// Select all navigation links
 const navLinks = document.querySelectorAll(".header__nav-link");
 
-// Iterate over each link
 navLinks.forEach((link) => {
-  // Append the base path for GitHub Pages if needed
   if (basePath === "/virja-construction/") {
     const newHref = basePath + link.getAttribute("href");
     link.setAttribute("href", newHref);
   }
 
-  // Check if the href attribute matches the current path
-  console.log(link.getAttribute("href"));
-
   if (link.getAttribute("href").includes(currentPath) && currentPath !== "") {
-    // Add the 'header__nav-link--active' class to the current link
     link.classList.add("header__nav-link--active");
   }
 });
 
-// For the logo link
 const logoLink = document.querySelector(".header__logo-link img");
 if (basePath === "/virja-construction/") {
   logoLink.setAttribute("src", basePath + "assets/logo.jpg");
 }
+
+const menuOverlay = document.querySelector(".header__menu-overlay");
+const menuBtn = document.querySelector(".header__menu-btn");
+
+menuOverlay.addEventListener("click", () => {
+  menuBtn.checked = false;
+});
+
+/**
+ * Carousel Code
+ */
+let slideIndex = 1;
+let slideInterval;
+
+function showSlides(n) {
+  const slides = document.getElementsByClassName("carousel__slide");
+  const dots = document.getElementsByClassName("carousel__dot");
+
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" carousel__dot--active", "");
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " carousel__dot--active";
+}
+
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+  resetAutoSlide();
+}
+
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+  resetAutoSlide();
+}
+
+function createIndicators() {
+  const slides = document.getElementsByClassName("carousel__slide");
+  const indicatorsContainer = document.getElementById("carousel-indicators");
+
+  indicatorsContainer.innerHTML = "";
+
+  for (let i = 0; i < slides.length; i++) {
+    const dot = document.createElement("span");
+    dot.className = "carousel__dot";
+    dot.onclick = () => currentSlide(i + 1);
+    indicatorsContainer.appendChild(dot);
+  }
+}
+
+function resetAutoSlide() {
+  clearInterval(slideInterval);
+  startAutoSlide();
+}
+
+function startAutoSlide() {
+  slideInterval = setInterval(() => plusSlides(1), 5000);
+}
+
+createIndicators();
+showSlides(slideIndex);
+startAutoSlide();

@@ -35,6 +35,7 @@
           <label for="header__menu-btn" class="header__menu-icon"
             ><span class="header__nav-icon"></span
           ></label>
+          <div class="header__menu-overlay" tabindex="-1"></div>
           <ul class="header__nav-menu">
             <li><a href="index.html" class="header__nav-link">Home</a></li>
             <li>
@@ -52,7 +53,60 @@
           </ul>
         </nav>
       </header>
-      <main></main>
+      <main class="main__content">
+        <section class="carousel">
+          <div class="carousel__container">
+            <div class="carousel__slide carousel__slide--fade">
+              <img
+                class="carousel__image"
+                src="assets/carousel-one.webp"
+                alt="Nature"
+              />
+              <div class="carousel__caption">first dolor sit amet.</div>
+            </div>
+
+            <div class="carousel__slide carousel__slide--fade">
+              <img
+                class="carousel__image"
+                src="assets/carousel-two.webp"
+                alt="Snow"
+              />
+              <div class="carousel__caption">Lorem ipsum Second.</div>
+            </div>
+
+            <div class="carousel__slide carousel__slide--fade">
+              <img
+                class="carousel__image"
+                src="assets/carousel-three.webp"
+                alt="Mountains"
+              />
+              <div class="carousel__caption">Lorem ipsum dolor.</div>
+            </div>
+
+            <div class="carousel__slide carousel__slide--fade">
+              <img
+                class="carousel__image"
+                src="assets/carousel-four.webp"
+                alt="Mountains"
+              />
+              <div class="carousel__caption">Fourth Lorem ipsum dolor.</div>
+            </div>
+
+            <span
+              class="carousel__button carousel__button--prev"
+              onclick="plusSlides(-1)"
+              >❮</span
+            >
+            <span
+              class="carousel__button carousel__button--next"
+              onclick="plusSlides(1)"
+              >❯</span
+            >
+
+            <div class="carousel__indicators" id="carousel-indicators"></div>
+          </div>
+        </section>
+      </main>
       <footer class="footer">
         <div class="footer__content">
           <div class="footer__columns">

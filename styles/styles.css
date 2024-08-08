@@ -96,7 +96,7 @@
 .carousel {
   grid-area: carousel;
   width: 100%;
-  height: 700px;
+  height: 500px;
   overflow: hidden;
 }
 
@@ -362,7 +362,7 @@ address {
     height: 100vh;
     background-color: var(--primary-color);
     padding: 1rem;
-    top: 10rem;
+    top: 0;
     right: -100%;
     position: fixed;
     z-index: 999;
@@ -371,17 +371,32 @@ address {
   }
 
   .header__menu-btn:checked ~ .header__nav-menu {
-    transform: translateX(-100%);
-    width: 100%;
+    width: 50%;
+    right: 0;
   }
 
-  .header__menu-btn:checked ~ body {
-    overflow-y: hidden;
+  .header__menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 998;
+  }
+
+  .header__menu-btn:checked ~ .header__menu-overlay {
+    display: block;
   }
 
   .header__menu-icon {
-    display: block;
+    position: absolute;
+    top: 4rem;
+    right: 3rem;
     cursor: pointer;
+    z-index: 1000;
+    display: block;
   }
 
   .header__nav-icon {
@@ -399,7 +414,6 @@ address {
     background-color: black;
     width: 100%;
     height: 100%;
-    transition: all 0.2s ease-out;
   }
 
   .header__nav-icon::before {
@@ -424,12 +438,13 @@ address {
 
   .header__menu-btn:checked ~ .header__menu-icon .header__nav-icon::before,
   .header__menu-btn:checked ~ .header__menu-icon .header__nav-icon::after {
-    top: 0;
+    top: -2rem;
+    right: 10.5rem;
     background: black;
   }
 
   .carousel {
-    height: 500px;
+    height: 400px;
   }
 
   .footer__columns {
@@ -440,10 +455,16 @@ address {
 /* For devices with a viewport width between 576px and 767px (mobile landscape) */
 @media (min-width: 576px) and (max-width: 767px) {
   .carousel {
-    height: 400px;
+    height: 300px;
   }
 
   .footer__columns {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .carousel {
+    height: 200px;
   }
 }
