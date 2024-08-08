@@ -382,7 +382,7 @@ address {
   }
 
   .header__menu-icon {
-    position: fixed;
+    position: absolute;
     top: 4rem;
     right: 3rem;
     cursor: pointer;
