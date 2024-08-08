@@ -355,7 +355,14 @@ address {
   }
 
   .header__menu-btn:checked ~ .header__nav-menu {
-    width: 80%;
+    width: 300px;
+    max-width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    outline: 0;
+    background-clip: padding-box;
     right: 0;
   }
 
@@ -422,8 +429,8 @@ address {
 
   .header__menu-btn:checked ~ .header__menu-icon .header__nav-icon::before,
   .header__menu-btn:checked ~ .header__menu-icon .header__nav-icon::after {
-    top: -2.875rem; /* Keep the vertical positioning */
-    right: 15.625rem; /* Adjust this value to position it from the right edge */
+    top: -2rem;
+    right: -1rem;
     background: black;
   }
 
