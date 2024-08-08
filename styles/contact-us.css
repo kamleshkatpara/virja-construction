@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .contact {
   display: flex;
   flex-direction: column;
@@ -11,14 +17,13 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 20px;
-  width: 100%; /* Ensure full width */
-  padding: 10px 0; /* Reduce padding to decrease height */
-  max-width: none; /* Allow it to stretch to the full width */
+  width: 100%;
+  padding: 10px 0;
 }
 
 .contact__info-text {
   background-color: #f0f0f0;
-  padding: 10px; /* Reduce padding to decrease height */
+  padding: 10px;
   flex: 1;
 }
 
@@ -51,21 +56,23 @@
 .contact__map-form {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
   gap: 40px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 75rem;
 }
 
 .contact__map {
   flex: 1;
   width: 100%;
+  margin: 1rem;
 }
 
 .contact__form {
   flex: 2;
-  max-width: 800px;
+  max-width: 50rem;
   width: 100%;
   padding: 20px;
 }
@@ -118,17 +125,49 @@
   background-color: #555;
 }
 
-@media (min-width: 768px) {
-  .contact__info-text {
-    padding: 40px;
-  }
-
-  .contact__info {
-    gap: 40px;
-  }
-
+/* Extra Small Devices (X-Small) - <576px */
+@media (max-width: 575.98px) {
   .contact__map-form {
-    flex-direction: row;
-    gap: 40px;
+    flex-direction: column;
+    gap: 20px; /* Reduced gap for smaller screens */
+  }
+}
+
+/* Small Devices - ≥576px */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .contact__map-form {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* Medium Devices - ≥768px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .contact__map-form {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+/* Large Devices - ≥992px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .contact__map {
+    flex: 1;
+    width: 100%;
+    margin: 1rem;
+  }
+}
+
+/* Extra Large Devices - ≥1200px */
+@media (min-width: 1200px) {
+  .contact__map {
+    max-width: 60rem; /* Adjust for larger screens */
+  }
+}
+
+/* Extra Extra Large Devices - ≥1400px */
+@media (min-width: 1400px) {
+  .contact__form {
+    max-width: 60rem; /* Increase form size for larger screens */
   }
 }
