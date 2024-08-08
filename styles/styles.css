@@ -337,24 +337,8 @@ address {
   font-size: 0.8rem;
 }
 
-@media screen and (min-width: 2560px) {
-  .carousel {
-    height: 700px;
-  }
-}
-
-@media (min-width: 1440px) and (max-width: 2559px) {
-  .carousel {
-    height: 700px;
-  }
-}
-
-/* For devices with a viewport width of 768px and above (tablets and desktops) */
-@media (max-width: 767px) {
-  .header__nav {
-    padding: 1rem 1.5rem;
-  }
-
+/* Extra Small Devices (X-Small) - <576px */
+@media (max-width: 575.98px) {
   .header__nav-menu {
     display: flex;
     flex-direction: column;
@@ -371,7 +355,7 @@ address {
   }
 
   .header__menu-btn:checked ~ .header__nav-menu {
-    width: 50%;
+    width: 80%;
     right: 0;
   }
 
@@ -391,7 +375,106 @@ address {
   }
 
   .header__menu-icon {
+    position: fixed;
+    top: 4rem;
+    right: 3rem;
+    cursor: pointer;
+    z-index: 1000;
+    display: block;
+  }
+
+  .header__nav-icon {
+    display: block;
+    background-color: black;
+    position: relative;
+    height: 2px;
+    width: 20px;
+  }
+
+  .header__nav-icon::before,
+  .header__nav-icon::after {
+    content: "";
     position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+  }
+
+  .header__nav-icon::before {
+    top: -5px;
+  }
+
+  .header__nav-icon::after {
+    top: 5px;
+  }
+
+  .header__menu-btn:checked ~ .header__menu-icon .header__nav-icon {
+    background: transparent;
+  }
+
+  .header__menu-btn:checked ~ .header__menu-icon .header__nav-icon::before {
+    transform: rotate(-45deg);
+  }
+
+  .header__menu-btn:checked ~ .header__menu-icon .header__nav-icon::after {
+    transform: rotate(45deg);
+  }
+
+  .header__menu-btn:checked ~ .header__menu-icon .header__nav-icon::before,
+  .header__menu-btn:checked ~ .header__menu-icon .header__nav-icon::after {
+    top: -2.875rem; /* Keep the vertical positioning */
+    right: 15.625rem; /* Adjust this value to position it from the right edge */
+    background: black;
+  }
+
+  .carousel {
+    height: 200px;
+  }
+
+  .footer__columns {
+    flex-direction: column;
+  }
+}
+
+/* Small Devices - ≥576px */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .header__nav-menu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    background-color: var(--primary-color);
+    padding: 1rem;
+    top: 0;
+    right: -100%;
+    position: fixed;
+    z-index: 999;
+    border-top: 1px dashed white;
+    transition: transform 0.5s ease-in;
+  }
+
+  .header__menu-btn:checked ~ .header__nav-menu {
+    width: 70%;
+    right: 0;
+  }
+
+  .header__menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 998;
+  }
+
+  .header__menu-btn:checked ~ .header__menu-overlay {
+    display: block;
+  }
+
+  .header__menu-icon {
+    position: fixed;
     top: 4rem;
     right: 3rem;
     cursor: pointer;
@@ -439,21 +522,10 @@ address {
   .header__menu-btn:checked ~ .header__menu-icon .header__nav-icon::before,
   .header__menu-btn:checked ~ .header__menu-icon .header__nav-icon::after {
     top: -2rem;
-    right: 10.5rem;
+    right: 8rem;
     background: black;
   }
 
-  .carousel {
-    height: 400px;
-  }
-
-  .footer__columns {
-    flex-direction: column;
-  }
-}
-
-/* For devices with a viewport width between 576px and 767px (mobile landscape) */
-@media (min-width: 576px) and (max-width: 767px) {
   .carousel {
     height: 300px;
   }
@@ -463,8 +535,34 @@ address {
   }
 }
 
-@media screen and (max-width: 576px) {
+/* Medium Devices - ≥768px */
+@media (min-width: 768px) and (max-width: 991.98px) {
   .carousel {
-    height: 200px;
+    height: 400px;
+  }
+
+  .footer__columns {
+    flex-direction: column;
+  }
+}
+
+/* Large Devices - ≥992px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .carousel {
+    height: 500px;
+  }
+}
+
+/* Extra Large Devices - ≥1200px */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .carousel {
+    height: 500px;
+  }
+}
+
+/* Extra Extra Large Devices - ≥1400px */
+@media (min-width: 1400px) {
+  .carousel {
+    height: 700px;
   }
 }
